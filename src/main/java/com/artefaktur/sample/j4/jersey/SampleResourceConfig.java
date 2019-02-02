@@ -2,7 +2,6 @@ package com.artefaktur.sample.j4.jersey;
 
 import javax.ws.rs.ApplicationPath;
 
-import org.glassfish.jersey.logging.LoggingFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 
 import com.artefaktur.sample.j4.controller.BookController;
@@ -13,12 +12,12 @@ public class SampleResourceConfig extends ResourceConfig
 {
   public SampleResourceConfig()
   {
-    register(LoggingFeature.class);
-    register(EndpointLoggingListener.class);
-    register(BookController.class);
+    //    register(LoggingFeature.class);
+    //    register(EndpointLoggingListener.class);
+
     register(JacksonJaxbJsonProvider.class);
-    //    register(JsonMapperConfigurator.class);
-    //    register(ObjectMapperResolver.class);
+
+    register(BookController.class);
 
   }
 }
